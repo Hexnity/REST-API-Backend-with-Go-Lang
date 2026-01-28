@@ -1,0 +1,11 @@
+CREATE TABLE IF NOT EXISTS users(
+    id SERIAL PRIMARY KEY,
+    username VARCHAR(50) UNIQUE NOT NULL,
+    email VARCHAR(100) UNIQUE NOT NULL,
+    email_verified BOOLEAN DEFAULT FALSE,
+    remember_token VARCHAR(255),
+    status VARCHAR(20) DEFAULT 'active',
+    deleted_at TIMESTAMP,
+    created_at TIMESTAMP WITHOUT TIME ZONE DEFAULT NOW(),
+    updated_at TIMESTAMP WITHOUT TIME ZONE DEFAULT NOW()
+);
