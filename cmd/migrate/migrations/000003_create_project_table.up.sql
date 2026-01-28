@@ -8,5 +8,6 @@ CREATE TABLE IF NOT EXISTS projects (
     team_members INT[],
     created_by INT NOT NULL,
     status VARCHAR(50) DEFAULT 'active',
-    FOREIGN KEY (created_by) REFERENCES user(id)
+    -- Use "users" if you renamed the table, or "user" with quotes
+    CONSTRAINT fk_created_by FOREIGN KEY (created_by) REFERENCES "users"(id)
 );
