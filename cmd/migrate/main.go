@@ -64,6 +64,9 @@ func main() {
 		"postgres",
 		driver,
 	)
+
+	m.Force(2)
+
 	if err != nil {
 		log.Fatalf("Failed to create migrate instance: %v\n", err)
 	}
